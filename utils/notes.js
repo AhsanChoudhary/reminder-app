@@ -26,3 +26,15 @@ const addNote = (myNote) => {
         const notesJson = JSON.stringify(allNotes);
         fs.writeFileSync('notes.json', notesJson);
     }
+
+    const listNotes = () => {
+        const allNotes = loadNotes();
+        allNotes.map((note, index) => {
+            console.log(`${index + 1}. ``${notes.reminder}`);
+        });
+    }
+
+    module.exports = {
+        addNote,
+        listNotes,
+    };
